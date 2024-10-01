@@ -10,23 +10,26 @@ const userArray = [
     {
         brugernavn: "bubber",
         id: 3
-    }
-    ,
+    },
     {
         brugernavn: "womp",
         id: 4
-    }
-    ,
+    },
     {
         brugernavn: "hejsa",
         id: 5
     }
 ];
 
-const getUsers = () => {
+const getAllUsersFromDB = () => {
     return userArray
 }
 
+const getUserByIdFromDB = (userid) => {
+    return userArray.find((user) => user.id === userid)
+}
+
 module.exports = {
-    getUsers,
+    getAllUsersFromDB,
+    getUserByIdFromDB
 }

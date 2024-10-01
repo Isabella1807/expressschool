@@ -3,13 +3,16 @@ const path = require("path");
 const app = express();
 const port = 3500;
 
-const getUsers = require("Model/userModel.js");
+/*const getUsers = require("Model/userModel.js");
 
 app.use(express.static('Views'));
 
 app.get("/users", function (req, res) {
     res.send(getUsers())
-});
+});*/
+
+const userRoutes = require("./Routes/userRoutes");
+app.use("/users", userRoutes);
 
 app.get("/home", function (req, res) {
     res.sendFile(path.join(__dirname, "Views", "home.html"));
